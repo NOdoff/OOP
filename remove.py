@@ -25,15 +25,15 @@ def remove(list_head, val):
     #        node = node.next
 
 
+if __name__ == '__main__':
+    s_list = SinglyList()
+    s_list.add_head(Node(-1))
 
-s_list = SinglyList()
-s_list.add_head(Node(-1))
+    node = s_list.head
+    for i in range(10):
+        node.next = Node(i)
+        node = node.next
 
-node = s_list.head
-for i in range(10):
-    node.next = Node(i)
-    node = node.next
-
-print_list(s_list)
-remove(s_list.head, 2)
-print_list(s_list)
+    print_list(s_list.head)
+    remove(s_list.head, 2)
+    print_list(s_list.head)

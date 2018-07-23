@@ -14,19 +14,20 @@ def print_list(list_head):
 
 if __name__ == "__main__":
     s_list = SinglyList()
-    s_list.add_head(Node(-1))
-
-    node = s_list.head
-    b = Node(5)
-    c = Node(8)
-    d = Node(7)
-    a.next = b
-    b.next = c
-    c.next = d
+    a = Node(-1)
+    s_list.add_head(a)
 
     # node = s_list.head
-    # for i in range(10):
-    #     node.next = Node(i)
-    #     node = node.next
+    # b = Node(5)
+    # c = Node(8)
+    # d = Node(7)
+    # a.next = b
+    # b.next = c
+    # c.next = d
+
+    node = s_list.head
+    for i in range(10):
+        node.next = Node(i)
+        node = node.next
 
     print_list(s_list.head)

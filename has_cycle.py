@@ -19,27 +19,28 @@ def has_cycle(list_head):
             print ("False")
             boo = False
         node = node.next
-s_list = SinglyList()
-a = Node(-1)
-s_list.add_head(a)
+if __name__ == '__main__':
+    s_list = SinglyList()
+    a = Node(-1)
+    s_list.add_head(a)
 
-node = s_list.head
-b = Node(5)
-c = Node(8)
-d = Node(7)
-a.next = b
-b.next = c
-c.next = d
-
-# node = s_list.head
-# for i in range(10):
-#     node.next = Node(i)
-#     node = node.next
-# 
-# save_head = s_list.head
-# while node:
-#     if node.next == None:
-#         node.next = save_head
-#         break
+    node = s_list.head
+    b = Node(5)
+    c = Node(8)
+    d = Node(7)
+    a.next = b
+    b.next = c
+    c.next = d
+    d.next = a
+    # node = s_list.head
+    # for i in range(10):
+    #     node.next = Node(i)
+    #     node = node.next
+    #
+    # save_head = s_list.head
+    # while node:
+    #     if node.next == None:
+    #         node.next = save_head
+    #         break
     node = node.next
-has_cycle(s_list.head)
+    has_cycle(s_list.head)

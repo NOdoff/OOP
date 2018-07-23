@@ -10,23 +10,25 @@ def add_tail(list_head, val):
         node = node.next
     node.next = Node(val)
 
-s_list = SinglyList()
-s_list.add_head(Node(-1))
+if __name__ == '__main__':
+    s_list = SinglyList()
+    a = Node(-1)
+    s_list.add_head(a)
 
-node = s_list.head
-for i in range(10):
-    node.next = Node(i)
-    node = node.next
+    # node = s_list.head
+    # for i in range(10):
+    #     node.next = Node(i)
+    #     node = node.next
 
-# node = s_list.head
-# b = Node(5)
-# c = Node(8)
-# d = Node(7)
-# a.next = b
-# b.next = c
-# c.next = d
+    node = s_list.head
+    b = Node(5)
+    c = Node(8)
+    d = Node(7)
+    a.next = b
+    b.next = c
+    c.next = d
 
-print_list(s_list)
-add_tail(s_list.head, 19)
-add_tail(None, 19)
-print_list(s_list)
+    print_list(s_list.head)
+    add_tail(s_list.head, 19)
+    add_tail(None, 19)
+    print_list(s_list.head)

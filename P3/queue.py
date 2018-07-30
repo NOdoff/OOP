@@ -1,33 +1,26 @@
-class Stack:
- 
+class Queue:
     def __init__(self):
         self.items = []
-
     def isEmpty(self):
         if self.items == []:
             return True
         else: 
             return False
-
-
-    def push(self, data):
-        self.items.append(data)
-
-    def pop(self):
-        return self.items.pop()
-
-    def peek(self):
-        return self.items[len(self.items) - 1]
-
+    def enqueue(self, data):
+        self.items.insert(0, data)
+    def dequeue(self):
+        self.items.pop()
+    def front(self):
+        return self.items[0]
     def size(self):
         return len(self.items)
-
     def __str__(self):
         if not self.isEmpty():
-            en_stack = enumerate(self.items)
-            for index, value in en_stack:
+            en_queue = enumerate(self.items)
+            for index, value in en_queue:
                 if (index == len(self.items) - 1):
-                    print(value, end = "\n")
+                    print(value, end = "")
                 else:
                     print(value, end = ", ")
-            
+        else:
+            print('Emptty') 

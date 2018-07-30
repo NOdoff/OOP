@@ -1,25 +1,40 @@
-from stack import Stack, Node
+from stack import Stack
 
 s = Stack()
-a = Node(1)
-b = Node(2)
-c = Node(3)
-d = Node(4)
-e = Node(5)
-f = Node(6)
-g = Node(7)
-h = Node(8)
-i = Node(9)
-j = Node(10)
+
 num = input("Enter the numbers: ")
-s.push(a)
-s.push(b)
-s.push(c)
-s.push(d)
-s.push(e)
-s.push(f)
-s.push(g)
-s.push(h)
-s.push(i)
-s.push(j) 
-s.__str__()
+
+l_num = list(num.split(' '))
+for value in l_num:
+    s.push(value)
+
+t_c = s.size()
+print("Total Count: " + str(t_c))
+
+sum = 0
+product = 1
+min = 10000000000000000000000000000000
+max = 0
+for item in range(0, s.size()):
+    value = int(s.pop())
+    if value < min:
+        min = value
+    if value > max:
+        max = value
+    sum += value
+    product *= value
+    print(str(sum))
+    print(str(product))
+    print(str(value))
+mean = sum / t_c
+print("Sum: " + str(sum))
+print("Product: " + str(product))
+print("Mean: " + str(mean))
+print("Min: " + str(min))
+print("Max: " + str(max))
+
+
+
+
+
+

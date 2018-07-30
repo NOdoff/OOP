@@ -1,26 +1,41 @@
 class Queue:
+
     def __init__(self):
+        
         self.items = []
+
     def isEmpty(self):
+
         if self.items == []:
             return True
         else: 
             return False
+
     def enqueue(self, data):
-        self.items.insert(0, data)
+
+        self.items.append(data)
+
     def dequeue(self):
-        self.items.pop()
+
+        return 
+        self.items.pop(0)
+
+
     def front(self):
+
         return self.items[0]
+        
     def size(self):
+
         return len(self.items)
+
+    def __iter__(self):
+        i = 0
+        while i < self.size():
+            yield self.items[i]
+            i += 1
+
+        
     def __str__(self):
-        if not self.isEmpty():
-            en_queue = enumerate(self.items)
-            for index, value in en_queue:
-                if (index == len(self.items) - 1):
-                    print(value, end = "")
-                else:
-                    print(value, end = ", ")
-        else:
-            print('Emptty') 
+        return ", ".join([str(x) for x in self.items]) if not self.isEmpty() else ""
+        

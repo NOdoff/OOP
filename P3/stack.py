@@ -22,12 +22,12 @@ class Stack:
     def size(self):
         return len(self.items)
 
+    def __iter__(self):
+            i = 0
+            while i < self.size():
+                yield self.items[i]
+                i += 1
+                
     def __str__(self):
-        if not self.isEmpty():
-            en_stack = enumerate(self.items)
-            for index, value in en_stack:
-                if (index == len(self.items) - 1):
-                    print(value, end = "\n")
-                else:
-                    print(value, end = ", ")
-            
+        return ", ".join([str(x) for x in self.items[::-1]]) if not self.isEmpty() else ""
+        

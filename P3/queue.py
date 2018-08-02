@@ -17,8 +17,7 @@ class Queue:
 
     def dequeue(self):
 
-        return 
-        self.items.pop(0)
+        return self.items.pop(0)
 
 
     def front(self):
